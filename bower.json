@@ -1,0 +1,20 @@
+{
+  "name": "git-class",
+  "version": "0.0.0",
+  "homepage": "https://github.com/manufacturedba/git-class",
+  "authors": [
+    "Roberto Rodriguez <manufacturedba@gmail.com>"
+  ],
+  "description": "Slideshow presentation on git best practices and semantic commit messages",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "git@github.com:hakimel/reveal.js#~3.1.0"
+  }
+}
