@@ -1,2 +1,92 @@
 section
-    a(href="https://github.com/manufacturedba/q-class") Presentation
+    section
+        h4 Semantic Commit Messages
+    section
+        div.
+            "Why?"
+    section
+        p.
+            Semantic commit messages serve three purposes
+        ul
+          li(class="fragment").
+              <code>git log</code> becomes a changelog on its own
+          li(class="fragment").
+              Eliminate urge to group unrelated changes together
+          li(class="fragment").
+              Commit messages are more useful regardless of message body
+    section
+        p.
+            Semantic commit messages are comprised of three components
+        p
+            code(class="fragment") type
+            code(class="fragment") (scope):
+            code(class="fragment")  body
+    section
+        div.
+            Type refers to one of several types of commits:
+        small.
+            (you can add or modify these)
+        ul
+            li(class="fragment").
+                feat. A new feature or extension on current functionality
+            li(class="fragment").
+                fix. Bug fixes to current features
+            li(class="fragment").
+                chore.  Enhancements/clean up without affecting production code
+            li(class="fragment").
+                refactor.  Refactoring production code
+            li(class="fragment").
+                docs.  Any kind of documentation additions or modifications
+            li(class="fragment").
+                style.  Any kind of formatting. (Indents, semi-colons, etc)
+            li(class="fragment").
+                test.  Adding, removing, modifying and any changes related to tests
+    section
+        p.
+            Scope refers to the affected portion of code or the intended feature
+            to be affected.  It can be omitted if there is not a specific enough target
+            for the commit
+        p.
+            Examples:
+        ul(class="fragment")
+            li.
+                templates
+            li.
+                socket provider
+            li.
+                admin settings
+            li.
+                server configuration
+            li.
+                navigation
+    section
+        p.
+            The message body should be a description of the changes going into
+            the commit.  It can be a summary, a long description, and anything in-between.
+        p(class="fragment").
+            As a brief summary it should be one sentence no longer than 70 characters.
+        p(class="fragment").
+            For longer descriptions, there should still be a single sentence summary with the rest
+            of the text starting on the third line.  Line length can be extended to 80 characters.
+    section
+        div.
+            Example:
+        pre(class="fragment")
+            code.
+                A brief summary of a commit.
+
+                This is a long description of a commit.  It can go on for quite a while.
+                Really this is useful for commits that may not be self-explanatory or contain
+                lots of changes.
+    section
+        div.
+            Now to put it all together
+    section
+        div.
+            Examples:
+        p(class="fragment").
+            <code>feat(email):  Add ability to specify multiple emails from dropdown</code>
+        p(class="fragment").
+            <code>fix(login):  Disable user from entering wrong password multiple times</code>
+        p(class="fragment").
+            <code>chore(script): Update shell scripts to point at correct directory</code>
