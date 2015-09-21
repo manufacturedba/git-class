@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title Git Good
+        meta(charset='utf-8')
+        meta(name='author', content='Roberto Rodriguez')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui')
+        link(rel='stylesheet', type='text/css', href='/bower_components/reveal.js/css/reveal.css')
+        link(rel='stylesheet', href='/bower_components/reveal.js/lib/css/zenburn.css')
+        link(rel='stylesheet', href='/bower_components/reveal.js/css/theme/night.css')
+    body
+        div(class="reveal")
+            div(class="slides")
+                include section/intro
+                include section/statesfates
+                include section/q-methods
+                include section/qa.jade
+                include section/links.jade
+        script(type='text/javascript', src='/bower_components/reveal.js/lib/js/head.min.js')
+        script(type='text/javascript', src='/bower_components/reveal.js/js/reveal.js')
+        script(type='text/javascript', src='/bower_components/reveal.js/plugin/highlight/highlight.js')
+        script(type='text/javascript', src='/bower_components/reveal.js/plugin/zoom-js/zoom.js')
+        block script

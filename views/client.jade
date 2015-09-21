@@ -1,0 +1,39 @@
+extends index
+
+block script
+    script.
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            multiplex: {
+                // Example values. To generate your own, see the socket.io server instructions.
+                secret: null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
+                id: '7f3f29c9ad6d56fc', // Obtained from socket.io server
+                url: '192.168.1.5:8000' // Location of socket.io server
+            },
+            controls: true,
+            touch: true,
+            progress: true,
+            history: true,
+            center: true,
+            hideAddressBar: true,
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: '/bower_components/reveal.js/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: 'socket.io/socket.io.js',
+                    async: true
+                },
+                {
+                    src: '/bower_components/reveal.js/plugin/multiplex/client.js',
+                    async: true
+                }
+            ]
+        });

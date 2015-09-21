@@ -1,0 +1,100 @@
+section
+    h4 Git Good
+    h3 A presentation on git sausage making, best practices, and semantic commit messages
+    aside(class="notes").
+        
+section
+    section
+      div What is "sausage making"?
+    aside(class="notes").
+    section
+      div. 
+          Sausage making is building features and fixes by completing micro-tasks.  
+          These micro-tasks take the form of commits made to a feature branch.
+      aside(class="notes").
+    section
+        h5 Benefits of sausage making:
+        ul
+            li Easier disection of branches for code review
+            li Transparent history of a feature
+            li Difficult to lose changes
+            li Easily revert breaking changes
+    section
+        h5 Downsides to sausage making:
+        ul
+            li Cherry-picking is difficult
+            li Assume unstable until merged (sausages aren't exactly pretty)
+            li More time added to development upfront
+            li Can mislead commit detectives
+            li Makes you think about what you just did :P
+    section
+        div.
+            "But how does one sausage make?"
+        div.
+            Moving, renaming, or deleting of files should be in separate commits.
+section
+    section
+        div Promises are a way of deferring computations until it is convenient
+        div(class="codeBlock")
+            pre(class="fragment")
+                code.
+                    doSomething().then(function(result){
+                        log.info('Done something');
+                    });
+                    
+                    doSomethingElse();
+                    log.info('Done something else');
+                    
+                    Done something else
+                    Done something
+        aside(class="notes").
+            Ususally this is handled by some event loop where operations are queued 
+            to be handled at a later point.  Typically, this on the next tick.  
+            In this example, we assume doSomething is an asynchronous function.  
+            It may make a call out to some server or perform some operation on 
+            a file ex. read, write, etc.  We pass .then a callback to be executed 
+            once doSomething has completed.
+    section
+        div Promises are a way of building asynchronous operations in a readable way
+            pre(class="fragment")
+                code.
+                    firstStep()
+                    .then(secondStep)
+                    .then(thirdStep)
+                    .then(function(result) {
+                        log.debug('Result from third step is ' + result);
+                    });
+        aside(class="notes").
+            Promise chains, which I'll elaborate on later, allows us to create an 
+            asynchronous sequence of operations.  Functions in the chain itself may 
+            not necessarily be asynchronous, but by using them with the Q library 
+            their execution is delayed for free.
+    section
+        div Promises are throw safe
+            pre(class="fragment fade-out")
+                code.
+                    var result;
+                    try {
+                        result = doSomethingSync();
+                    } catch(err) {
+                        log.error(err); // Continue on
+                    }
+                    
+                    if (result) {
+                        doSomethingElse();
+                    }
+                    
+            pre(class="fragment fade-in")
+                code.
+                    doSomething()
+                    .then(doSomethingElse)
+                    .fail(function(err) {
+                        log.error(err);
+                    });
+        aside(class="notes").
+            Previous to discovering promises I may have been tempted to write something
+            like this.
+            Promises have two ways to become rejected.  We can either reject them 
+            ourselves or they will reject themselves when encountering an error.  
+            We only need to provide a single rejection handler to catch any errors  
+            though we can provide each step its own rejection handler.
