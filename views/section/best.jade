@@ -1,25 +1,40 @@
 section
-    h5 Q & A
-    code(data-trim)
-        div(id="qa", contentEditable="true", style="font-size:0.5em;background:#3F3F3F;color: #DCDCDC;width:100%;height:auto;padding:15px;text-align:left")
-    button(id="highlight", onclick="highlight()") Update Highlighting
-    style.
-        #highlight {
-            background: #3F3F3F;
-            padding: 10px;
-            color: #DCDCDC;
-            border: none;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
-        #highlight:focus {
-            color: #ccc;
-            outline: none;
-        }
-    script(type="text/javascript").
-        function highlight() {
-            hljs.highlightBlock(document.getElementById('qa'));
-        }
-    aside(class="notes").
-        Now for the hardest part.  Any questions leveraging promises?
-        
+    section
+        h4 Best practices
+    section
+        div.
+            Release tags &mdash; not branches
+        p(class="fragment").
+            Tags and branches both point at commits, but tags cannot "move forward".  
+            This means you always have a clear understanding of what is deployed.
+    section
+        img(src="../views/static/tags_branches.png")
+section
+    section
+        div.
+            Do not force-push
+    section
+        div.
+            Seriously, don't force-push
+        img(class="fragment", src="../views/static/obi-wan-hates.gif")
+    section
+        div.
+            Alright, you can force-push
+    section
+        div.
+            What are some reasons for force-pushing?
+        ul
+            li(class="fragment") You've push sensitive data to the repository &mdash; a simple revert won't erase history
+            li(class="fragment") That's it.
+        p(class="fragment").
+            If you come up with any others, record your findings in <code>/dev/null</code>
+    section
+        div.
+            How to properly force-push:
+        ul
+            li(class="fragment") Let the team know prior to pushing
+            li(class="fragment"). 
+                Make sure no commits will be lost
+            li(class="fragment").
+                Make sure all branches checked out from the updated branch are also
+                updated
