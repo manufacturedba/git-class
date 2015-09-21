@@ -1,0 +1,41 @@
+section
+    h4 Git Good
+    h3 A presentation on git sausage making, best practices, and semantic commit messages
+    aside(class="notes").
+        
+section
+    section
+      div What is "sausage making"?
+    aside(class="notes").
+    section
+      div. 
+          Sausage making is building features and fixes by completing micro-tasks.  
+          These micro-tasks take the form of commits made to a feature branch.
+      aside(class="notes").
+    section
+        h5 Benefits of sausage making:
+        ul
+            li Easier disection of branches for code review
+            li Transparent history of a feature
+            li Difficult to lose changes
+            li Easy to rebert breaking changes
+    section
+        h5 Downsides to sausage making:
+        ul
+            li Cherry-picking is difficult
+            li Assume unstable until merged (sausages aren't exactly pretty)
+            li More time added to development upfront
+            li Can mislead commit detectives
+            li Makes you think about what you just did :P
+    section
+        div.
+            "But how does one sausage make?"
+    section
+        ul
+            li(class="").
+                Create a goal for your next commit.  Try not to do anything outside that
+                goal.
+            li(class="fragment"). 
+                Clean up messes with reverts.  Don't sweep under the rug by rewriting history
+            li(class="fragment"). 
+                Any moving, renaming, or deleting of files should be in their own
