@@ -1,6 +1,6 @@
 {
   "name": "git-class",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Slideshow presentation on git best practices and semantic commit messages",
   "main": "node index.js",
   "scripts": {
