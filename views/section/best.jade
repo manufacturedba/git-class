@@ -32,9 +32,27 @@ section
         div.
             How to properly force-push:
         ul
-            li(class="fragment") Let the team know prior to pushing
+            li(class="fragment") Let the team know prior to pushing.  Everyone will be unavoidably be affected especially if working on the same branch.
             li(class="fragment"). 
                 Make sure no commits will be lost
             li(class="fragment").
                 Make sure all branches checked out from the updated branch are also
-                updated
+                updated afterwards.
+    section
+        div. 
+            How to recover from a force-push
+    section
+        p.
+            All force-pushes will spit out a similar message
+        pre
+            code.
+                To user@host:repo.git
+                + abcdef0...1234567 HEAD -> branchname (forced update)
+        p(class="fragment").
+            <code>abcdef0</code> refers to the previous commit your HEAD was pointing
+            at.  By checking it out, you can restore the state of the repostory prior
+            to force-pushing.
+        pre(class="fragment")
+            code.
+                git checkout abcdef0
+                git push -f
