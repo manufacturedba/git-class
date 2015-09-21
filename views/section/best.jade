@@ -3,9 +3,27 @@ section
         h4 Best practices
     section
         div.
+            Commit as much as possible
+        p.
+            Git cannot protect you unless you commit.  You are by all means welcome
+            to not publish anything until you're done, but commit before pursuing
+            new tasks.
+    section
+        p.
+            Do not  <code> git reset --hard</code> <small>(Sorry)</small>
+        p.
+            Instead use <code>git checkout -b &lt;experimental_branch_name&gt;</code>
+        p.
+            OR
+        p
+            pre.
+                <code>git stash</code>
+                <code>git checkout .</code>
+    section
+        div.
             Release tags &mdash; not branches
         p(class="fragment").
-            Tags and branches both point at commits, but tags cannot "move forward".  
+            Tags and branches both point at commits, but tags cannot "move forward".
             This means you always have a clear understanding of what is deployed.
     section
         img(src="../views/static/tags_branches.png")
@@ -33,13 +51,13 @@ section
             How to properly force-push:
         ul
             li(class="fragment") Let the team know prior to pushing.  Everyone will be unavoidably be affected especially if working on the same branch.
-            li(class="fragment"). 
+            li(class="fragment").
                 Make sure no commits will be lost
             li(class="fragment").
                 Make sure all branches checked out from the updated branch are also
                 updated afterwards.
     section
-        div. 
+        div.
             How to recover from a force-push
     section
         p.
