@@ -12,7 +12,10 @@ section
         p.
             Do not  <code> git reset --hard</code> <small>(Sorry)</small>
         p.
-            Instead use <code>git checkout -b &lt;experimental_branch_name&gt;</code>
+            Instead use
+        p
+            pre.
+                <code>git checkout -b &lt;experimental_branch_name&gt;</code>
         p.
             OR
         p
@@ -26,10 +29,22 @@ section
             Tags and branches both point at commits, but tags cannot "move forward".
             This means you always have a clear understanding of what is deployed.
     section
-        img(src="../views/static/tags_branches.png")
+        p.
+            Creating tags from branches
+        pre
+            code.
+                git checkout &lt;branch_name&gt;
+                git tag &lt;tag_name&gt;
+    section
+        p.
+            Creating branches from tags
+        pre
+            code.
+                git checkout &lt;tag_name&gt;
+                git checkout -b &lt;branch_name&gt;
 section
     section
-        div.
+        h5.
             Do not force-push
     section
         div.
